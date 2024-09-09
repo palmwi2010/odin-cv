@@ -1,0 +1,39 @@
+.field {
+    width: fit-content;
+    width: 400px;
+}
+
+.field button {
+    outline: none;
+    border: none;
+    color: #2563eb;
+    font-size: 20px;
+    background-color: transparent;
+}
+
+.field button:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.field-toprow {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 4px;
+}
+
+.field-title {
+    font-size: 24px;
+}
+
+.field-text {
+    font-size: 18px;
+}
+
+.field-input {
+    font-size: 18px;
+    padding-left: 1ch;
+    border-radius: 10px;
+    padding-block: 4px;
+    width: 100%;
+}

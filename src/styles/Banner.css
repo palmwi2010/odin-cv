@@ -1,0 +1,12 @@
+header {
+    padding-block: 50px;
+    background: linear-gradient(to right, transparent, darkgray 40%, transparent);
+}
+
+header h1 {
+    font-family: 'Bangers';
+    font-size: 60px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.2ch;
+}
