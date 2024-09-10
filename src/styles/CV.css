@@ -1,21 +1,58 @@
-.main {
-    padding: 20px 80px;
-    background-color: lightgray;
-    width: 1000px;
-    margin: 100px auto;
+.cv {
+    width: 800px;
+    background-color: white;
+    padding: 24px;
 }
 
-.main h2 {
-    font-size: 40px;
+.cv p {
+    font-size: 16px;
 }
 
-.section-title {
+.cv h1 {
+    text-align: center;
     font-size: 30px;
-    margin-block: 30px 16px;
 }
 
-.section-fields {
+.cv h2 {
+    font-size: 24px;
+    padding-top: 8px;
+}
+
+.cv ul {
+    list-style-position: outside;
+    padding-left: 20px;
+}
+
+.cv > * {
+    margin-bottom: 8px;
+}
+
+.contact-info {
     display: flex;
-    flex-direction: column;
-    gap:20px;
+    justify-content: center;
+    gap:16px
+}
+
+.summary {
+    text-align: center;
+}
+
+.inline-cv {
+    display: flex;
+    gap: 8px;
+    margin-block: 8px;
+}
+
+.inline-cv h4 {
+    width: fit-content;
+}
+
+.inline-list {
+    display: flex;
+    gap:16px;
+}
+
+.inline-list li {
+    list-style: none;
+    text-align: center;
 }

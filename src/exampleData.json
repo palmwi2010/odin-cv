@@ -1,6 +1,7 @@
 {
     "name": "James Smith",
     "contact": {
+      "address": "London, UK",
       "email": "james.smith@email.com",
       "phone": "+123 456 7890",
       "linkedin": "linkedin.com/in/jamessmith",
@@ -35,11 +36,13 @@
         ]
       }
     ],
-    "education": {
+    "education": [
+    {
       "degree": "Bachelor of Science in Computer Science",
       "university": "University of California, Berkeley",
       "start_date": "September 2014",
       "end_date": "May 2018",
+      "grade": "4.0 GPA",
       "coursework": [
         "Data Structures",
         "Algorithms",
@@ -48,7 +51,8 @@
         "Software Engineering"
       ],
       "activities": "Member of the Computer Science Club, where I collaborated on open-source projects and hackathons."
-    },
+    }
+    ],
     "skills": [
       {
         "title": "Programming Languages",
