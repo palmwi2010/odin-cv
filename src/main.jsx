@@ -1,12 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import InputBlock from './components/InputBlock'
-//import Banner from './components/Banner'
-//import CV from './components/CV'
+import App from "./App";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <InputBlock fieldName="personal"/>
+    <App />
   </StrictMode>,
 )

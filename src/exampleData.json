@@ -1,0 +1,80 @@
+{
+    "name": "James Smith",
+    "contact": {
+      "email": "james.smith@email.com",
+      "phone": "+123 456 7890",
+      "linkedin": "linkedin.com/in/jamessmith",
+      "github": "github.com/jamessmith"
+    },
+    "summary": "Skilled programmer with 5+ years of experience in developing web and software applications. Adept at working with diverse programming languages such as Python, JavaScript, and Java. Experienced in both front-end and back-end development, with a focus on delivering efficient, scalable solutions. Strong team player with a passion for problem-solving and continuous learning.",
+    "employment_history": [
+      {
+        "job_title": "Software Developer",
+        "company": "XYZ Technologies",
+        "location": "New York, NY",
+        "start_date": "August 2020",
+        "end_date": "Present",
+        "responsibilities": [
+          "Developed and maintained web applications using Python (Django) and JavaScript (React).",
+          "Collaborated with cross-functional teams to define project requirements and deliver custom software solutions.",
+          "Optimized back-end services to reduce server response times by 25%.",
+          "Mentored junior developers, conducting code reviews and providing technical guidance."
+        ]
+      },
+      {
+        "job_title": "Junior Programmer",
+        "company": "Tech Innovators",
+        "location": "Boston, MA",
+        "start_date": "June 2018",
+        "end_date": "July 2020",
+        "responsibilities": [
+          "Assisted in developing mobile and web applications using Java and JavaScript.",
+          "Implemented database designs and optimized SQL queries for enhanced performance.",
+          "Participated in team meetings to discuss project progress and troubleshoot technical issues.",
+          "Contributed to the successful deployment of five client projects, delivering on time and within budget."
+        ]
+      }
+    ],
+    "education": {
+      "degree": "Bachelor of Science in Computer Science",
+      "university": "University of California, Berkeley",
+      "start_date": "September 2014",
+      "end_date": "May 2018",
+      "coursework": [
+        "Data Structures",
+        "Algorithms",
+        "Machine Learning",
+        "Artificial Intelligence",
+        "Software Engineering"
+      ],
+      "activities": "Member of the Computer Science Club, where I collaborated on open-source projects and hackathons."
+    },
+    "skills": [
+      {
+        "title": "Programming Languages",
+        "items": ["Python", "JavaScript", "Java", "SQL", "HTML/CSS"]
+      },
+      {
+        "title": "Frameworks",
+        "items": ["Django", "React", "Node.js"]
+      },
+      {
+        "title": "Tools",
+        "items": ["Git", "Docker", "Jenkins", "AWS"]
+      },
+      {
+        "title": "Databases",
+        "items": ["MySQL", "PostgreSQL", "MongoDB"]
+      },
+      {
+        "title": "Version Control",
+        "items": ["Git/GitHub"]
+      }
+    ],
+    "personal_interests": [
+      "Competitive coding and algorithm challenges (active participant in online coding platforms).",
+      "Open-source contributor, focusing on improving developer tools.",
+      "Avid chess player and member of a local chess club.",
+      "Passionate about AI and machine learning, frequently experimenting with personal projects."
+    ]
+  }

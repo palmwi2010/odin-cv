@@ -8,6 +8,14 @@ const fieldData = {
             {"title": "Address", "value": "London, UK", "inputType": "text", "placeholder": "Enter address"}
         ]        
     },
+    'work': {
+        'title': "Professional experience",
+        'fields': [
+            {'title': "Company", "value": "Mycompany", "inputType": "text", "placeholder": "Enter company"},
+            {'title': "Role", "value": "Janitor", "inputType": "text", "placeholder": "Enter role"},
+            {'title': "Description", "value": "+447731 126 132", "inputType": "textarea", "placeholder": "Enter mobile number"},
+        ]        
+    },
 }
 
 export default fieldData;

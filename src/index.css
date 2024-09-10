@@ -22,4 +22,12 @@
 
 body {
   background-color: lightgray;
+  padding-block: 80px;
+
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
 }
