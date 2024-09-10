@@ -10,8 +10,7 @@ export default function App() {
     return (
       <>
           <div className="inputs">
-              <InputBlock fieldName="personal"/>
-              <InputBlock fieldName="work"/>
+              <InputBlock fieldName="personal" cvData={cvData} updateData={updateData}/>
           </div>
           <CV data={cvData}/>
       </>

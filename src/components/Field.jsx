@@ -1,26 +1,27 @@
 import "../styles/Field.css";
-import { useState } from "react";
+import FieldInput from "./FieldInput";
 
-export default function Field({title, value, inputType, placeholder, isEditing, isCollapsed}) {
+export default function Field({title, id, inputType, placeholder, isEditing, isCollapsed, cvData, updateData, category}) {
 
-    const [fieldContent, setContent] = useState(value);
-    const updateText = e => setContent(e.target.value)
+    const content = cvData[category][id];
 
-    //const isInputField = inputType != "text"
+    const updateText = e => {
+        updateData({...cvData, [category]: {...cvData[category], [id]:e.target.value}});
+    }
 
-    if (isCollapsed) return (<p className="field-summary">{fieldContent}</p>)
+    if (isCollapsed) return (<p className="field-summary">{content}</p>)
 
     if (!isEditing) return (
         <div className="field">
             <p className="field-title">{title}</p>
-            <p className="field-text">{fieldContent}</p>
+            <p className="field-text">{content}</p>
         </div>
         )
 
     return (
         <div className="field">
             <label htmlFor={title} className="field-title">{title}</label>
-            <input className="field-input" value={fieldContent} onChange={updateText} type={inputType} placeholder={placeholder} id={title}/>
+            <FieldInput inputType={inputType} content={content} updateText={updateText} placeholder={placeholder} title={title}/>
         </div>
     )
 }

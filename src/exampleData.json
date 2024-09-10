@@ -1,13 +1,13 @@
 {
-    "name": "James Smith",
-    "contact": {
+    "personal": {
+      "name": "James Smith",
       "address": "London, UK",
       "email": "james.smith@email.com",
       "phone": "+123 456 7890",
       "linkedin": "linkedin.com/in/jamessmith",
-      "github": "github.com/jamessmith"
+      "github": "github.com/jamessmith",
+      "summary": "Skilled programmer with 5+ years of experience in developing web and software applications. Adept at working with diverse programming languages such as Python, JavaScript, and Java. Experienced in both front-end and back-end development, with a focus on delivering efficient, scalable solutions. Strong team player with a passion for problem-solving and continuous learning."
     },
-    "summary": "Skilled programmer with 5+ years of experience in developing web and software applications. Adept at working with diverse programming languages such as Python, JavaScript, and Java. Experienced in both front-end and back-end development, with a focus on delivering efficient, scalable solutions. Strong team player with a passion for problem-solving and continuous learning.",
     "employment_history": [
       {
         "job_title": "Software Developer",

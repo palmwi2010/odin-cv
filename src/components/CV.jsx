@@ -6,13 +6,13 @@ export default function CV({data}) {
 
     return (
         <section className="cv">
-            <h1>{data.name}</h1>
+            <h1>{data.personal.name}</h1>
             <div className="contact-info">
-                <p>{data.contact.address}</p>
-                <p>{data.contact.phone}</p>
-                <p>{data.contact.email}</p>
+                <p>{data.personal.address}</p>
+                <p>{data.personal.phone}</p>
+                <p>{data.personal.email}</p>
             </div>
-            <p className="summary">{data.summary}</p>
+            <p className="summary">{data.personal.summary}</p>
             <h2>Professional experience</h2>
             {data.employment_history.map(job => (
                 <EmploymentCV job={job} key={crypto.randomUUID()}/>

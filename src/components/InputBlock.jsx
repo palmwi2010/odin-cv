@@ -1,51 +1,48 @@
 import "../styles/InputBlock.css";
 import fieldData from "../fieldData";
 import Field from "./Field";
+import TopRow from "./TopRow";
 import { useState } from "react";
 
-function InputBlock({fieldName}) {
-
-    const [isEditing, changeEditing] = useState(false);
-    const [isCollapsed, setCollapse] = useState(false);
-
-    const changeCollapse = () => {
-        if (isEditing) changeEditing(!isEditing)
-        setCollapse(!isCollapsed);
-    }
+function InputBlock({fieldName, cvData, updateData}) {
 
     const data = fieldData[fieldName];
     if (!data) throw new Error(`Field ${fieldName} not found in data`);
-
     const {title, fields} = data;
 
-    const topRow = (
-        <div className="input-toprow">
-            <h2 className="block-title">{title}</h2>
-            <button 
-                className={`btn-chevron ${isCollapsed ? null:"up"}`}
-                onClick={() => changeCollapse(!isCollapsed)}>
-            </button>
-        </div>
-    )
+    const [isEditing, setEditing] = useState(false);
+    const [isCollapsed, setCollapse] = useState(false);
+
+    const changeEditing = () => {
+        setEditing(!isEditing);
+    }
+
+    const changeCollapse = () => {
+        changeEditing(false)
+        setCollapse(!isCollapsed);
+    }
 
     return (
         <div className="input-block">
-            {topRow}
+            <TopRow title={title} isCollapsed={isCollapsed} changeCollapse={changeCollapse} />
             <div className={!isCollapsed && "block-uncollapsed"}>
                 <div className="block-fields">
-                    {fields.map(({title, value, inputType, placeholder}) => (<Field
+                    {fields.map(({title, id, inputType, placeholder}) => (<Field
                             title={title}
-                            value={value}
+                            id={id}
                             inputType={inputType}
                             placeholder={placeholder}
                             isEditing={isEditing}
                             isCollapsed={isCollapsed}
+                            cvData={cvData}
+                            updateData={updateData}
+                            category={fieldName}
                             key={title}
                         />
                     ))}
                 </div>
                 {!isCollapsed &&
-                <button className = "btn" onClick={() => changeEditing(!isEditing)}>
+                <button className = "btn" onClick={changeEditing}>
                     {isEditing ? "Save":"Edit"}
                 </button>}
             </div>

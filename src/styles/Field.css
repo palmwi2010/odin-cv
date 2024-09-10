@@ -10,15 +10,27 @@
     margin-left: var(--block-left-offset);
 }
 
-.field-input {
+.field-input, .field-textarea {
     font-size: 16px;
     padding-left: var(--block-left-offset);
     border-radius: 10px;
-    height: 2.5rem;
     width: 100%;
     background-color: var(--gray-background);
     border: none;
     outline: none;
+}
+
+.field-input {
+    height: 2.5rem;
+}
+
+.field-textarea {
+    padding-block: 0.6rem;
+    line-height: 1.3rem;
+}
+
+#Summary {
+    height: 8rem;
 }
 
 .field-text, .field-summary {
@@ -28,7 +40,7 @@
 }
 
 .field-text {
-    height:2.5rem;
+    min-height:1.5rem;
 }
 
 .field-summary {
