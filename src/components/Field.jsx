@@ -1,27 +1,26 @@
 import "../styles/Field.css";
 import { useState } from "react";
 
-export default function Field({title, value, inputType}) {
+export default function Field({title, value, inputType, placeholder, isEditing, isCollapsed}) {
 
-    const [isEditing, setEditing] = useState(false);
     const [fieldContent, setContent] = useState(value);
-
-    const changeEditing = () => setEditing(!isEditing);
     const updateText = e => setContent(e.target.value)
 
-    const isInputField = inputType != "text"
+    //const isInputField = inputType != "text"
+
+    if (isCollapsed) return (<p className="field-summary">{fieldContent}</p>)
+
+    if (!isEditing) return (
+        <div className="field">
+            <p className="field-title">{title}</p>
+            <p className="field-text">{fieldContent}</p>
+        </div>
+        )
 
     return (
         <div className="field">
-            <div className="field-toprow">
-                <h4 className="field-title">{title}</h4>
-                <button className="edit-button" onClick={changeEditing}>
-                    {isEditing ? "Confirm":"Edit"}
-                </button>
-            </div>
-            {!isEditing && <p className="field-text">{fieldContent}</p>}
-            {isEditing && isInputField && <input className="field-input" value={fieldContent} onChange={updateText} type={inputType}/>}
-            {isEditing && !isInputField && <textarea className="field-input" value={fieldContent} onChange={updateText}/>}
+            <label htmlFor={title} className="field-title">{title}</label>
+            <input className="field-input" value={fieldContent} onChange={updateText} type={inputType} placeholder={placeholder} id={title}/>
         </div>
     )
 }

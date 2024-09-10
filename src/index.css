@@ -5,6 +5,11 @@
   font-family: 'Roboto';
 }
 
+:root {
+  --gray-background: #e5e7eb;
+  --block-left-offset: 6px;
+}
+
 @font-face {
   font-family: 'Bangers';
   src: url("../public/fonts/Bangers-Regular.ttf");
@@ -13,4 +18,8 @@
 @font-face {
   font-family: 'Roboto';
   src: url("../public/fonts/Roboto-Regular.ttf");
+}
+
+body {
+  background-color: lightgray;
 }

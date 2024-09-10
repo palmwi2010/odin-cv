@@ -1,39 +1,40 @@
 .field {
-    width: fit-content;
-    width: 400px;
-}
-
-.field button {
-    outline: none;
-    border: none;
-    color: #2563eb;
-    font-size: 20px;
-    background-color: transparent;
-}
-
-.field button:hover {
-    cursor: pointer;
-    color: black;
-}
-
-.field-toprow {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 4px;
+    margin-top: 16px;
 }
 
 .field-title {
-    font-size: 24px;
-}
-
-.field-text {
-    font-size: 18px;
+    font-size: 20px;
+    margin-bottom: 6px;
+    font-weight: 700;
+    display: block;
+    margin-left: var(--block-left-offset);
 }
 
 .field-input {
-    font-size: 18px;
-    padding-left: 1ch;
+    font-size: 16px;
+    padding-left: var(--block-left-offset);
     border-radius: 10px;
-    padding-block: 4px;
+    height: 2.5rem;
     width: 100%;
+    background-color: var(--gray-background);
+    border: none;
+    outline: none;
+}
+
+.field-text, .field-summary {
+    margin-left: var(--block-left-offset);
+    font-size: 18px;
+    color: #1e293b;
+}
+
+.field-text {
+    height:2.5rem;
+}
+
+.field-summary {
+    margin-bottom: 8px;
+}
+
+.field-summary:first-child {
+    margin-top: 16px;
 }

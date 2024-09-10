@@ -1,0 +1,77 @@
+.input-block {
+    width: min(40vw, 500px);
+    background-color: white;
+    border-radius: 20px;
+    margin-inline: auto;
+    margin-top: 200px;
+    padding: 16px;
+}
+
+.input-toprow {
+    display: flex;
+    justify-content: space-between;
+    border-bottom:  2px solid lightgray;
+}
+
+.block-title {
+    margin-left: var(--block-left-offset);
+    font-size: 26px;
+    padding-bottom: 2px;
+}
+
+.btn {
+    font-size: 20px;
+    outline: none;
+    border: none;
+    background-color: #38bdf8;
+    border-radius: 10px;
+    padding: 8px 16px;
+    margin-top: 8px;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.btn:hover {
+    background-color: #075985;
+    cursor: pointer;
+    color: white;
+}
+
+.btn-chevron {
+    width: 40px;
+    height: 30px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    background-image: url("/public/chevron-down.svg");
+    transition: transform 0.3s ease-in
+}
+
+.btn-chevron:hover {
+    cursor: pointer;
+    background-color: #f1f5f9;
+}
+
+.btn-chevron.up {
+    transform: rotate(180deg);
+}
+
+.block-uncollapsed {
+    transform-origin: top;
+    animation: slide-open 0.2s ease-in;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes slide-open {
+    from {
+        transform: scaleY(0.5);
+        opacity: 0
+    }    
+    to {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
