@@ -1,6 +1,7 @@
 import { useState } from "react";
 import InputBlock from "./components/InputBlock";
 import exampleData from "./exampleData.json";
+import PersonalSection from "./components/PersonalSection";
 import CV from "./components/CV";
 
 export default function App() {
@@ -21,7 +22,11 @@ export default function App() {
     return (
       <div className="app">
           <div className="input-section">
-              <InputBlock data={personalData} updateData={updatePersonalData}/>
+              <InputBlock 
+                data={personalData} 
+                updateData={updatePersonalData} 
+                Section={PersonalSection}
+              />
           </div>
           <CV 
             personalData={personalData}
