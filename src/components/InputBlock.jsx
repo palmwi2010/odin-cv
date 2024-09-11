@@ -1,14 +1,11 @@
 import "../styles/InputBlock.css";
-import fieldData from "../fieldData";
 import Field from "./Field";
 import TopRow from "./TopRow";
 import { useState } from "react";
 
-function InputBlock({fieldName, cvData, updateData}) {
+function InputBlock({data, updateData}) {
 
-    const data = fieldData[fieldName];
-    if (!data) throw new Error(`Field ${fieldName} not found in data`);
-    const {title, fields} = data;
+    const {name, address, email, phone, summary} = data;
 
     const [isEditing, setEditing] = useState(false);
     const [isCollapsed, setCollapse] = useState(true);
@@ -24,28 +21,67 @@ function InputBlock({fieldName, cvData, updateData}) {
 
     return (
         <div className="input-block">
-            <TopRow title={title} isCollapsed={isCollapsed} changeCollapse={changeCollapse} />
-            <div className={!isCollapsed && "block-uncollapsed"}>
-                <div className="block-fields">
-                    {fields.map(({title, id, inputType, placeholder}) => (<Field
-                            title={title}
-                            id={id}
-                            inputType={inputType}
-                            placeholder={placeholder}
-                            isEditing={isEditing}
-                            isCollapsed={isCollapsed}
-                            cvData={cvData}
+            <TopRow title="Personal details" isCollapsed={isCollapsed} changeCollapse={changeCollapse} />
+            {!isCollapsed && (
+                <div className={!isCollapsed && "block-uncollapsed"}>
+                    <div className="block-fields">
+                        <Field
+                            title="Name"
+                            inputType="text"
+                            placeholder="Enter first and second name"
+                            data={name}
                             updateData={updateData}
-                            category={fieldName}
-                            key={title}
+                            isEditing={isEditing}
+                            dataKey="name"
+                            key="name"
                         />
-                    ))}
+                        <Field
+                            title="Address"
+                            key="address"
+                            inputType="text"
+                            placeholder="Enter address"
+                            data={address}
+                            updateData={updateData}
+                            isEditing={isEditing}
+                            dataKey="address"
+                        />
+                        <Field
+                            title="Phone number"
+                            key="phone"
+                            inputType="text"
+                            placeholder="Enter phone number"
+                            data={phone}
+                            updateData={updateData}
+                            isEditing={isEditing}
+                            dataKey="phone"
+                        />
+                        <Field
+                            title="Email address"
+                            key="email"
+                            inputType="text"
+                            placeholder="Enter email"
+                            data={email}
+                            updateData={updateData}
+                            isEditing={isEditing}
+                            dataKey="email"
+                        />
+                        <Field
+                            title="Professional summary"
+                            key="summary"
+                            inputType="textarea"
+                            placeholder="Enter a professional summary"
+                            data={summary}
+                            updateData={updateData}
+                            isEditing={isEditing}
+                            dataKey="summary"
+                        />                                                
+                    </div>
+                    {!isCollapsed &&
+                    <button className = "btn" onClick={changeEditing}>
+                        {isEditing ? "Save":"Edit"}
+                    </button>}
                 </div>
-                {!isCollapsed &&
-                <button className = "btn" onClick={changeEditing}>
-                    {isEditing ? "Save":"Edit"}
-                </button>}
-            </div>
+            )}
         </div>
     )
 }

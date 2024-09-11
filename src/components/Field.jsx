@@ -1,27 +1,23 @@
 import "../styles/Field.css";
 import FieldInput from "./FieldInput";
 
-export default function Field({title, id, inputType, placeholder, isEditing, isCollapsed, cvData, updateData, category}) {
-
-    const content = cvData[category][id];
+export default function Field({title, dataKey, inputType, placeholder, isEditing, data, updateData}) {
 
     const updateText = e => {
-        updateData({...cvData, [category]: {...cvData[category], [id]:e.target.value}});
+        updateData(dataKey, e.target.value);
     }
-
-    if (isCollapsed) return (<p className="field-summary ellipsis">{content}</p>)
 
     if (!isEditing) return (
         <div className="field">
             <p className="field-title">{title}</p>
-            <p className="field-text">{content}</p>
+            <p className="field-text">{data}</p>
         </div>
         )
 
     return (
         <div className="field">
             <label htmlFor={title} className="field-title">{title}</label>
-            <FieldInput inputType={inputType} content={content} updateText={updateText} placeholder={placeholder} title={title}/>
+            <FieldInput inputType={inputType} content={data} updateText={updateText} placeholder={placeholder} title={title}/>
         </div>
     )
 }
