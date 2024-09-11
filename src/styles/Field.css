@@ -12,7 +12,7 @@
 
 .field-input, .field-textarea {
     font-size: 16px;
-    padding-left: var(--block-left-offset);
+    padding-inline: var(--block-left-offset);
     border-radius: 10px;
     width: 100%;
     background-color: var(--gray-background);
@@ -50,3 +50,9 @@
 .field-summary:first-child {
     margin-top: 16px;
 }
+
+.ellipsis {
+    white-space: nowrap;       /* Prevent text from wrapping to the next line */
+    overflow: hidden;          /* Hide the overflowed text */
+    text-overflow: ellipsis;   /* Add the ellipsis ("...") when text is too long */
+  }

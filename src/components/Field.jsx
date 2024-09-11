@@ -9,7 +9,7 @@ export default function Field({title, id, inputType, placeholder, isEditing, isC
         updateData({...cvData, [category]: {...cvData[category], [id]:e.target.value}});
     }
 
-    if (isCollapsed) return (<p className="field-summary">{content}</p>)
+    if (isCollapsed) return (<p className="field-summary ellipsis">{content}</p>)
 
     if (!isEditing) return (
         <div className="field">

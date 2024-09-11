@@ -11,14 +11,14 @@ function InputBlock({fieldName, cvData, updateData}) {
     const {title, fields} = data;
 
     const [isEditing, setEditing] = useState(false);
-    const [isCollapsed, setCollapse] = useState(false);
+    const [isCollapsed, setCollapse] = useState(true);
 
     const changeEditing = () => {
         setEditing(!isEditing);
     }
 
     const changeCollapse = () => {
-        changeEditing(false)
+        setEditing(false)
         setCollapse(!isCollapsed);
     }
 

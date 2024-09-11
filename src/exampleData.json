@@ -15,6 +15,7 @@
         "location": "New York, NY",
         "start_date": "August 2020",
         "end_date": "Present",
+        "id": 0,
         "responsibilities": [
           "Developed and maintained web applications using Python (Django) and JavaScript (React).",
           "Collaborated with cross-functional teams to define project requirements and deliver custom software solutions.",
@@ -28,6 +29,7 @@
         "location": "Boston, MA",
         "start_date": "June 2018",
         "end_date": "July 2020",
+        "id": 1,
         "responsibilities": [
           "Assisted in developing mobile and web applications using Java and JavaScript.",
           "Implemented database designs and optimized SQL queries for enhanced performance.",
@@ -43,6 +45,7 @@
       "start_date": "September 2014",
       "end_date": "May 2018",
       "grade": "4.0 GPA",
+      "id": 2,
       "coursework": [
         "Data Structures",
         "Algorithms",
