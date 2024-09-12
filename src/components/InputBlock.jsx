@@ -1,11 +1,9 @@
 import "../styles/InputBlock.css";
-import Field from "./Field";
 import TopRow from "./TopRow";
-import PersonalSection from "./PersonalSection";
 
 import { useState } from "react";
 
-function InputBlock({data, updateData, Section}) {
+function InputBlock({title, data, updateData, Section, addNew=null, deleteItem=null}) {
 
     const [isEditing, setEditing] = useState(false);
     const [isCollapsed, setCollapse] = useState(true);
@@ -19,20 +17,45 @@ function InputBlock({data, updateData, Section}) {
         setCollapse(!isCollapsed);
     }
 
+    const isArray = Array.isArray(data);
+
+    const renderSections = () => {
+        if (isArray) {
+            return data.map(d => (
+                <Section
+                    data={d}
+                    updateData={updateData}
+                    isEditing={isEditing}
+                    deleteItem={deleteItem}
+                    key={d.id}
+                />
+            ));
+        } else {
+            return (
+                <Section
+                    data={data}
+                    updateData={updateData}
+                    isEditing={isEditing}
+                />
+            );
+        }
+    };
+
     return (
         <div className="input-block">
-            <TopRow title="Personal details" isCollapsed={isCollapsed} changeCollapse={changeCollapse} />
+            <TopRow title={title} isCollapsed={isCollapsed} changeCollapse={changeCollapse} />
             {!isCollapsed && (
                 <div className={!isCollapsed && "block-uncollapsed"}>
-                    <Section
-                        data={data}
-                        updateData={updateData}
-                        isEditing={isEditing}
-                    />
+                    {renderSections()}
                     {!isCollapsed &&
-                    <button className = "btn" onClick={changeEditing}>
-                        {isEditing ? "Save":"Edit"}
-                    </button>}
+                    <div className="input-buttons">
+                        {addNew && (
+                            <button className = "btn secondary" onClick={addNew}>+</button>
+                        )}
+                        <button className = "btn" onClick={changeEditing}>
+                            {isEditing ? "Save":"Edit"}
+                        </button>
+                    </div>}
                 </div>
             )}
         </div>

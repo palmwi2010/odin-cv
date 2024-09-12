@@ -1,0 +1,26 @@
+.array-toprow {
+    display: flex;
+    gap:16px;
+    align-items: center;
+    height: 3rem;
+    background-color: rgb(239, 240, 241);
+    border-radius: 10px;
+}
+
+.array-title {
+    padding-left: var(--block-left-offset);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.btn-delete {
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    background-image: url("/public/trash.svg");
+    margin-left: auto;
+    cursor: pointer;
+}

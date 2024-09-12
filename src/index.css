@@ -37,8 +37,12 @@ body {
   flex: 1 1 21cm;
   max-width: 600px;
   min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap:20px;
 }
 
 .cv {
   width: 21cm;
+  height: fit-content;
 }

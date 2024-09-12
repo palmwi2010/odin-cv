@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function EducationSection({data, updateData, isEditing, deleteItem}) {
 
-    const { degree, university, start_date, end_date, grade, id} = data;
+    const { job_title, company, location, start_date, end_date, id} = data;
 
     const [isCollapsed, setCollapse] = useState(true);
     const changeCollapse = () => {setCollapse(!isCollapsed)};
@@ -15,28 +15,38 @@ function EducationSection({data, updateData, isEditing, deleteItem}) {
 
     return (
         <div className="array-block">
-        <ArrayRow title={degree} isCollapsed={isCollapsed} changeCollapse={changeCollapse} deleteItem={deleteItem} id={id}/>
+        <ArrayRow title={company} isCollapsed={isCollapsed} changeCollapse={changeCollapse} deleteItem={deleteItem} id={id}/>
         {!isCollapsed && (
             <div className="block-fields">
                 <Field
-                    title="Degree"
+                    title="Company"
                     inputType="text"
-                    placeholder="Enter degree title"
-                    data={degree}
+                    placeholder="Enter company name"
+                    data={company}
                     updateData={updateArrayData}
                     isEditing={isEditing}
-                    dataKey="degree"
-                    key="degree"
+                    dataKey="company"
+                    key="company"
                 />
                 <Field
-                    title="University"
-                    key="university"
+                    title="Role"
+                    key="job_title"
                     inputType="text"
                     placeholder="Enter university name"
-                    data={university}
+                    data={job_title}
                     updateData={updateArrayData}
                     isEditing={isEditing}
-                    dataKey="university"
+                    dataKey="job_title"
+                />
+                <Field
+                    title="Location"
+                    key="location"
+                    inputType="text"
+                    placeholder="Enter location"
+                    data={location}
+                    updateData={updateArrayData}
+                    isEditing={isEditing}
+                    dataKey="location"
                 />
                 <div className="date-fields">
                     <Field
@@ -60,16 +70,6 @@ function EducationSection({data, updateData, isEditing, deleteItem}) {
                         dataKey="end_date"
                     />
                 </div>
-                <Field
-                    title="Grade"
-                    key="grade"
-                    inputType="text"
-                    placeholder="Enter grade received"
-                    data={grade}
-                    updateData={updateArrayData}
-                    isEditing={isEditing}
-                    dataKey="grade"
-                />
             </div>
         )}
         </div>
