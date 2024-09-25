@@ -9,7 +9,7 @@
 .input-toprow {
     display: flex;
     justify-content: space-between;
-    border-bottom:  2px solid lightgray;
+    /* border-bottom:  2px solid lightgray; */
 }
 
 .block-title {

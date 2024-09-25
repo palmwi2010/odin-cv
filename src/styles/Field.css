@@ -35,7 +35,7 @@
 
 .field-text, .field-summary {
     margin-left: var(--block-left-offset);
-    font-size: 18px;
+    font-size: 16px;
     color: #1e293b;
 }
 

@@ -9,14 +9,14 @@ export default function Field({title, dataKey, inputType, placeholder, isEditing
 
     if (!isEditing) return (
         <div className="field">
-            <p className="field-title">{title}</p>
+            {title && <p className="field-title">{title}</p>}
             <p className="field-text">{data}</p>
         </div>
         )
 
     return (
         <div className="field">
-            <label htmlFor={title} className="field-title">{title}</label>
+            {title && <label htmlFor={title} className="field-title">{title}</label>}
             <FieldInput inputType={inputType} content={data} updateText={updateText} placeholder={placeholder} title={title}/>
         </div>
     )

@@ -1,0 +1,13 @@
+.field-with-delete {
+    display: flex;
+    gap:16px;
+    align-items: center;
+}
+
+.field-with-delete > div{
+    flex-grow: 999;
+}
+
+.field-with-delete .field {
+    margin-top: 8px;
+}

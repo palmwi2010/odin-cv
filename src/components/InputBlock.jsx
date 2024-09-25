@@ -3,7 +3,7 @@ import TopRow from "./TopRow";
 
 import { useState } from "react";
 
-function InputBlock({title, data, updateData, Section, addNew=null, deleteItem=null}) {
+function InputBlock({title, data, updateData, Section, addNew=null, deleteItem=null, addArrayItem = null, deleteArrayItem = null}) {
 
     const [isEditing, setEditing] = useState(false);
     const [isCollapsed, setCollapse] = useState(true);
@@ -28,6 +28,8 @@ function InputBlock({title, data, updateData, Section, addNew=null, deleteItem=n
                     isEditing={isEditing}
                     deleteItem={deleteItem}
                     key={d.id}
+                    addArrayItem = {addArrayItem}
+                    deleteArrayItem = {deleteArrayItem}
                 />
             ));
         } else {

@@ -1,16 +1,25 @@
 import Field from "./Field";
 import ArrayRow from "./ArrayRow";
+import ArrayField from "./ArrayField";
 import { useState } from "react";
 
-function EducationSection({data, updateData, isEditing, deleteItem}) {
+function EducationSection({data, updateData, isEditing, deleteItem, addArrayItem, deleteArrayItem}) {
 
-    const { degree, university, start_date, end_date, grade, id} = data;
+    const { degree, university, start_date, end_date, grade, coursework, activities, id} = data;
 
     const [isCollapsed, setCollapse] = useState(true);
     const changeCollapse = () => {setCollapse(!isCollapsed)};
 
-    const updateArrayData = (key, value) => {
-        updateData(key, value, id);
+    const updateArrayData = (key, value, itemId = null) => {
+        updateData(key, value, id, itemId);
+    }
+
+    const addArrayItemIndexed = (key) => {
+        addArrayItem(key, id);
+    }
+
+    const deleteArrayItemIndexed = (key, itemId) => {
+        deleteArrayItem(key, id, itemId);
     }
 
     return (
@@ -69,6 +78,28 @@ function EducationSection({data, updateData, isEditing, deleteItem}) {
                     updateData={updateArrayData}
                     isEditing={isEditing}
                     dataKey="grade"
+                />
+                <ArrayField
+                    title="Modules"
+                    key="coursework"
+                    inputType="text"
+                    placeholder="Enter module title"
+                    data={coursework}
+                    updateData={updateArrayData}
+                    addArrayItem={addArrayItemIndexed}
+                    deleteRow={deleteArrayItemIndexed}
+                    isEditing={isEditing}
+                    dataKey="coursework"
+                />
+                <Field
+                    title="Activities"
+                    key="activities"
+                    inputType="textarea"
+                    placeholder="Enter extra-curricular activities"
+                    data={activities}
+                    updateData={updateArrayData}
+                    isEditing={isEditing}
+                    dataKey="activities"
                 />
             </div>
         )}

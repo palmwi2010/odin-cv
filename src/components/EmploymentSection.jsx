@@ -1,17 +1,26 @@
 import Field from "./Field";
 import ArrayRow from "./ArrayRow";
+import ArrayField from "./ArrayField";
 import { useState } from "react";
 
-function EducationSection({data, updateData, isEditing, deleteItem}) {
+function EmploymentSection({data, updateData, isEditing, deleteItem, addArrayItem, deleteArrayItem}) {
 
-    const { job_title, company, location, start_date, end_date, id} = data;
+    const { job_title, company, location, start_date, end_date, responsibilities, id} = data;
 
     const [isCollapsed, setCollapse] = useState(true);
     const changeCollapse = () => {setCollapse(!isCollapsed)};
 
-    const updateArrayData = (key, value) => {
-        updateData(key, value, id);
+    const updateArrayData = (key, value, itemId = null) => {
+        updateData(key, value, id, itemId);
     }
+
+    const addArrayItemIndexed = (key) => {
+        addArrayItem(key, id)
+    };
+
+    const deleteArrayItemIndexed = (key, itemId) => {
+        deleteArrayItem(key, id, itemId)
+    };
 
     return (
         <div className="array-block">
@@ -48,6 +57,18 @@ function EducationSection({data, updateData, isEditing, deleteItem}) {
                     isEditing={isEditing}
                     dataKey="location"
                 />
+                <ArrayField
+                    title="Responsibilities"
+                    key="responsibilities"
+                    inputType="textarea"
+                    placeholder="Enter responsibility"
+                    data={responsibilities}
+                    updateData={updateArrayData}
+                    addArrayItem={addArrayItemIndexed}
+                    deleteRow={deleteArrayItemIndexed}
+                    isEditing={isEditing}
+                    dataKey="responsibilities"
+                />
                 <div className="date-fields">
                     <Field
                         title="Start date"
@@ -76,4 +97,4 @@ function EducationSection({data, updateData, isEditing, deleteItem}) {
     )
 }
 
-export default EducationSection
+export default EmploymentSection
