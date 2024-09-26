@@ -21,6 +21,17 @@ function InputBlock({title, data, updateData, Section, addNew=null, deleteItem=n
 
     const renderSections = () => {
         if (isArray) {
+            if (title === "Interests") {
+                return (
+                <Section
+                    data={data}
+                    updateData={updateData}
+                    deleteArrayItem={deleteArrayItem}
+                    addArrayItem={addArrayItem}
+                    isEditing={isEditing}
+                />)
+            }
+
             return data.map(d => (
                 <Section
                     data={d}

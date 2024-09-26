@@ -1,0 +1,21 @@
+.data-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn.secondary {
+    background-color: lightgray;
+}
+
+.btn.secondary:hover {
+    color: black;
+}
+
+.data-buttons > button {
+    font-size: 18px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.data-buttons > button:hover {
+    transform: scale(1.1);
+}

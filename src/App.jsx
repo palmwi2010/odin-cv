@@ -4,6 +4,8 @@ import exampleData from "./exampleData.json";
 import PersonalSection from "./components/PersonalSection";
 import EducationSection from "./components/EducationSection";
 import EmploymentSection from "./components/EmploymentSection";
+import InterestsSection from "./components/InterestsSection";
+import DataControls from "./components/DataControls";
 import CV from "./components/CV";
 
 export default function App() {
@@ -37,6 +39,21 @@ export default function App() {
 
     const updateEmploymentData = (key, value, arrayId, itemIndex = null) => {
         updateSectionData(employmentSections, setEmploymentSections, key, value, arrayId, itemIndex)
+    }
+
+    const updateInterests = (key, value, itemId) => {
+        setInterests(interests.map((i, id) => {
+            if (id === itemId) return value;
+            return i;
+        }))
+    }
+
+    const deleteInterest = (key, arrayId) => {
+        setInterests(interests.filter((_, id) => id != arrayId));
+    }
+
+    const addInterest = () => {
+        setInterests(interests.concat(""));
     }
 
     const addEducationItem = () => {
@@ -96,9 +113,27 @@ export default function App() {
         setEmploymentSections(employmentSections.filter(e => e.id != arrayId));
     }
 
+    const clearData = () => {
+        setPersonalData({'name': '', 'address': '', "email": '', "phone":'', "summary":''});
+        setEducationSections([]);
+        setEmploymentSections([]);
+        setInterests([]);
+    }
+
+    const loadExampleData = () => {
+        setPersonalData(exampleData.personal);
+        setEducationSections(exampleData.education);
+        setEmploymentSections(exampleData.employment_history);
+        setInterests(exampleData.interests);
+    }
+
     return (
       <div className="app">
           <div className="input-section">
+            <DataControls
+                loadData = {loadExampleData}
+                clearData = {clearData}
+            />
             <InputBlock 
                 title="Personal details"
                 data={personalData} 
@@ -124,7 +159,15 @@ export default function App() {
                 deleteItem = {deleteEducationItem}
                 addArrayItem = {addEducationArrayItem}
                 deleteArrayItem = {deleteEducationArrayItem}
-            />            
+            />        
+            <InputBlock
+                title="Interests"
+                data={interests} 
+                updateData={updateInterests} 
+                Section={InterestsSection}
+                addArrayItem={addInterest}
+                deleteArrayItem = {deleteInterest}
+            />        
           </div>
 
           <CV 

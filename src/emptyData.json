@@ -1,0 +1,60 @@
+{
+    "personal": {
+      "name": "",
+      "address": "",
+      "email": "",
+      "phone": "",
+      "linkedin": "",
+      "github": "",
+      "summary": ""
+    },
+    "employment_history": [
+     
+    ],
+    "education": [
+    {
+      "degree": "BSc Computer Science",
+      "university": "University of California, Berkeley",
+      "start_date": "September 2014",
+      "end_date": "May 2018",
+      "grade": "4.0 GPA",
+      "id": 2,
+      "coursework": [
+        "Data Structures",
+        "Algorithms",
+        "Machine Learning",
+        "Artificial Intelligence",
+        "Software Engineering"
+      ],
+      "activities": "Member of the Computer Science Club, where I collaborated on open-source projects and hackathons."
+    }
+    ],
+    "skills": [
+      {
+        "title": "Programming Languages",
+        "items": ["Python", "JavaScript", "Java", "SQL", "HTML/CSS"]
+      },
+      {
+        "title": "Frameworks",
+        "items": ["Django", "React", "Node.js"]
+      },
+      {
+        "title": "Tools",
+        "items": ["Git", "Docker", "Jenkins", "AWS"]
+      },
+      {
+        "title": "Databases",
+        "items": ["MySQL", "PostgreSQL", "MongoDB"]
+      },
+      {
+        "title": "Version Control",
+        "items": ["Git/GitHub"]
+      }
+    ],
+    "interests": [
+      "Competitive coding and algorithm challenges (active participant in online coding platforms).",
+      "Open-source contributor, focusing on improving developer tools.",
+      "Avid chess player and member of a local chess club.",
+      "Passionate about AI and machine learning, frequently experimenting with personal projects."
+    ]
+  }
